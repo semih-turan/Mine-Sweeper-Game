@@ -9,7 +9,7 @@ public class MineSweeper { // The Evaluation Form: Item 5
     String[][] visiblePlayMap;
 
     // Constructor method
-    MineSweeper(int width, int height){
+    public MineSweeper(int width, int height){
         this.width = width;
         this.height = height;
         hidePlayMap = new String[width][height];
@@ -19,8 +19,12 @@ public class MineSweeper { // The Evaluation Form: Item 5
     // Run game method
     public void run(){ // The Evaluation Form: Item 6
         // Printing play map with bombs
+        System.out.println("Welcome to mine sweeper game!");
+        System.out.println("-----Mine Locations-----");
         print2DArray(plantMines(this.hidePlayMap));
-        System.out.println("--------------------");
+        System.out.println("------------------------");
+        System.out.println("------------------------");
+
         // Printing play map without bombs
         print2DArray(fill(this.visiblePlayMap));
 
