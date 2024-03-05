@@ -1,11 +1,10 @@
 import java.util.Scanner;
-
 /**
  * @author Semih Turan
  * @since march 2024
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // Declare variables
         Scanner input = new Scanner(System.in);
         int width, height;
@@ -13,6 +12,7 @@ public class Main {
         // Prompting play area width and height
         do{
             System.out.print("Please enter play area width (min. 2): ");
+            // User input validation
             while(!input.hasNextInt()){
                 System.out.println("Please enter a valid number for width!");
                 System.out.print("Please enter play area width (min. 2): ");
@@ -25,6 +25,7 @@ public class Main {
         }while(width<2);
         do{
             System.out.print("Please enter play area height (min. 2): ");
+            // User input validation
             while(!input.hasNextInt()){
                 System.out.println("Please enter a valid number for height!");
                 System.out.print("Please enter play area height (min. 2): ");
