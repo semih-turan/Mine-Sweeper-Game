@@ -53,12 +53,12 @@ public class MineSweeper { // The Evaluation Form: Item 5
 
             // Prompting user input for column checks proper input or not
             System.out.print("Please select column: ");
-            while(!input.hasNextInt()){
+            while(!input.hasNextInt()){ // The Evaluation Form: Item 9
                 System.out.println("Please enter a valid number for column!");
                 System.out.print("Please select column: ");
-                input.next();
+                input.next(); // The Evaluation Form: Item 9
             }
-            int selectCol = input.nextInt();
+            int selectCol = input.nextInt(); // The Evaluation Form: Item 9
 
             // User input validation
             if(selectCol < 0 || selectCol>this.height){ // The Evaluation Form: Item 10
