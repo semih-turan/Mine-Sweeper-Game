@@ -35,9 +35,14 @@ public class MineSweeper { // The Evaluation Form: Item 5
         boolean gameOver = false;
 
         while (!gameOver) {
-            // Prompting user input for row
-            System.out.print("Please select row: ");
+            // Prompting user input for row and checks proper input or not
             Scanner input = new Scanner(System.in);
+            System.out.print("Please select row: ");
+            while(!input.hasNextInt()){ // The Evaluation Form: Item 9
+                System.out.println("Please enter a valid number for row!");
+                System.out.print("Please select row: ");
+                input.next(); // The Evaluation Form: Item 9
+            }
             int selectRow = input.nextInt(); // The Evaluation Form: Item 9
 
             // User input validation
@@ -46,9 +51,14 @@ public class MineSweeper { // The Evaluation Form: Item 5
                 continue;
             }
 
-            // Prompting user input for column
+            // Prompting user input for column checks proper input or not
             System.out.print("Please select column: ");
-            int selectCol = input.nextInt(); // The Evaluation Form: Item 9
+            while(!input.hasNextInt()){
+                System.out.println("Please enter a valid number for column!");
+                System.out.print("Please select column: ");
+                input.next();
+            }
+            int selectCol = input.nextInt();
 
             // User input validation
             if(selectCol < 0 || selectCol>this.height){ // The Evaluation Form: Item 10
@@ -141,7 +151,7 @@ public class MineSweeper { // The Evaluation Form: Item 5
     }
 
     // Print array method
-    static void print2DArray(String[][] arr) {
+    public void print2DArray(String[][] arr) {
         for (String[] row : arr) {
             for (String value : row) {
                 System.out.print(value + " ");
@@ -151,7 +161,7 @@ public class MineSweeper { // The Evaluation Form: Item 5
     }
 
     // Fill array "-" method
-    static String[][] fill(String[][] arr){
+    public String[][] fill(String[][] arr){
 
         for (String[] strings : arr) {
             Arrays.fill(strings, "-");
