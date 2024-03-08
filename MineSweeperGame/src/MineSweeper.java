@@ -84,6 +84,7 @@ public class MineSweeper { // The Evaluation Form: Item 5
             // Game over condition or printing number of mines around selected point
             if (hidePlayMap[selectRow][selectCol].equals("*")) { // The Evaluation Form: Item 13
                 System.out.println("Boom!!!  You are failed!"); // The Evaluation Form: Item 15
+                print2DArray(hidePlayMap);
                 gameOver = true;
             } else {
                 // Sets boundary conditions for playing area
